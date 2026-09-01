@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Rangka (Skeletal) - Pendidikan Biologi UNSIL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Fredoka:wght@600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== FONT DEFINITIONS & VARS ==================== */
+        @font-face {
+            font-family: 'Gliker';
+            src: local('Gliker'), local('Fredoka-Bold'), url('https://fonts.gstatic.com/s/fredoka/v14/u44xYB2kq29Z111v3L1q6L0.woff2') format('woff2');
+            font-weight: bold;
+        }
+
+        :root {
+            --hijau-tua: #004D40;
+            --hijau-muda: #2E7D32;
+            --merah-bold: #C62828;
+            --teks-hitam: #212121;
+            --bg-canvas: #E8F5E9;
+            --bg-card: #FFFFFF;
+            --border-color: #A5D6A7;
+            --shadow: 0 8px 24px rgba(0, 77, 64, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-canvas);
+            color: var(--teks-hitam);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* ==================== PRESENTATION CONTAINER ==================== */
+        .presentation-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 680px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ==================== HEADER ==================== */
+        .top-header {
+            height: 35px;
+            background-color: var(--hijau-tua);
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .top-header span.univ {
+            font-weight: 700;
+            color: #A5D6A7;
+        }
+
+        /* ==================== SLIDE CONTENT AREA ==================== */
+        .slide-body {
+            flex: 1;
+            padding: 25px 35px;
+            overflow-y: auto;
+            display: none; /* Controlled by JS */
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .slide-body.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==================== TYPOGRAPHY ==================== */
+        h1.main-title {
+            font-family: 'Gliker', 'Fredoka', cursive, sans-serif;
+            color: var(--hijau-tua);
+            font-size: 32px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        h2.sub-title {
+            font-family: 'Cardo', serif;
+            color: var(--hijau-muda);
+            font-size: 24px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+        }
+
+        h3.section-title {
+            font-family: 'Cardo', serif;
+            color: var(--hijau-muda);
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        p, li {
+            font-size: 14.5px;
+            color: var(--teks-hitam);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        strong, .highlight {
+            color: var(--merah-bold);
+            font-weight: 700;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* ==================== LAYOUT COMPONENTS ==================== */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 15px;
+            height: calc(100% - 60px);
+            margin-top: 15px;
+        }
+
+        .grid-item {
+            background-color: #F1F8E9;
+            border: 2px solid var(--hijau-muda);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .grid-item:hover {
+            background-color: var(--hijau-muda);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(46, 125, 50, 0.3);
+        }
+
+        .grid-item:hover span.code,
+        .grid-item:hover span.title {
+            color: #FFFFFF !important;
+        }
+
+        .grid-item span.code {
+            font-family: 'Gliker', 'Fredoka', sans-serif;
+            font-size: 22px;
+            color: var(--hijau-tua);
+            margin-bottom: 4px;
+        }
+
+        .grid-item span.title {
+            font-family: 'Cardo', serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--hijau-muda);
+            line-height: 1.2;
+        }
+
+        .content-flex {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .content-text {
+            flex: 1.2;
+        }
+
+        .content-media {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #FAFAFA;
+            border: 1px solid #E0E0E0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .content-media img {
+            max-width: 100%;
+            max-height: 280px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        .caption {
+            font-size: 11.5px;
+            color: #616161;
+            margin-top: 6px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Cover Specific */
+        .cover-box {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .authors-box {
+            margin-top: 25px;
+            background: #F1F8E9;
+            padding: 15px 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--hijau-muda);
+            text-align: left;
+        }
+
+        /* ==================== FOOTER / NAVIGATION ==================== */
+        .bottom-nav {
+            height: 55px;
+            background-color: #FAFAFA;
+            border-top: 1px solid #E0E0E0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .nav-btn {
+            background-color: var(--hijau-muda);
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--hijau-tua);
+        }
+
+        .nav-btn.home-btn {
+            background-color: var(--hijau-tua);
+        }
+
+        .nav-btn.home-btn:hover {
+            background-color: #00251a;
+        }
+
+        .slide-counter {
+            font-size: 12px;
+            color: #757575;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="presentation-container">
+        <div class="top-header">
+            <span>Pendidikan Biologi - <span class="univ">Universitas Siliwangi</span></span>
+            <span id="current-topic-label">Sistem Rangka (Skeletal)</span>
+        </div>
+
+        <div class="slide-body active" id="slide-0">
+            <div class="cover-box">
+                <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+                <h2 class="sub-title" style="border:none; text-align:center;">Anatomi Fisiologi Tubuh Manusia</h2>
+                <p style="font-size: 15px;">Dosen Pengampu: <strong>Dr. Dani Ramdani S.Pd., M.Pd.</strong></p>
+                
+                <div class="authors-box">
+                    <p style="margin-bottom:5px;"><strong>Disusun Oleh:</strong></p>
+                    <p style="margin:2px 0;">1. Dea Aprilia (242154111007)</p>
+                    <p style="margin:2px 0;">2. Salsabila Farhana (242154111049)</p>
+                    <p style="margin:2px 0;">3. Melani Destiny (242154111050)</p>
+                </div>
+
+                <button class="nav-btn" style="margin-top: 30px; padding: 12px 24px; font-size:15px;" onclick="goToSlide(1)">
+                    Mulai Presentasi &rarr;
+                </button>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-1">
+            <h1 class="main-title">DAFTAR PEMBAHASAN</h1>
+            <p style="text-align: center; color: #666; margin-bottom: 10px;">Pilih topik untuk langsung menuju materi:</p>
+            
+            <div class="grid-container">
+                <div class="grid-item" onclick="goToSlide(2)">
+                    <span class="code">A</span>
+                    <span class="title">Struktur Histologis Tulang</span>
+                </div>
+                <div class="grid-item" onclick="goToSlide(3)">
+                    <span class="code">B</span>
+                    <span class="title">Proses Osifikasi Tulang</span>
+                </div>
+                <div class="grid-item" onclick="goToSlide(4)">
+                    <span class="code">C</span>
+                    <span class="title">Anatomi Makroskopis Tulang Panjang</span>
+                </div>
+                <div class="grid-item" onclick="goToSlide(5)">
+                    <span class="code">D</span>
+                    <span class="title">Klasifikasi & Komponen Tulang Aksial</span>
+                </div>
+                <div class="grid-item" onclick="goToSlide(6)">
+                    <span class="code">E</span>
+                    <span class="title">Klasifikasi & Komponen Tulang Apendikular</span>
+                </div>
+                <div class="grid-item" onclick="goToSlide(7)">
+                    <span class="code">F</span>
+                    <span class="title">Fisiologi Remodeling & Homeostasis Kalsium</span>
+                </div>
+                <div class="grid-item" onclick="goToSlide(8)">
+                    <span class="code">G</span>
+                    <span class="title">Klasifikasi Sendi Berdasarkan Struktur</span>
+                </div>
+                <div class="grid-item" onclick="goToSlide(9)">
+                    <span class="code">H</span>
+                    <span class="title">Jenis-jenis Gerakan Sendi Sinovial</span>
+                </div>
+                <div class="grid-item" onclick="goToSlide(10)">
+                    <span class="code">I</span>
+                    <span class="title">Kelainan Sistem Rangka</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-2">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">A. Struktur Histologis Tulang</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Tulang tersusun atas matriks terdeposisi mineral dan sel-sel tulang khusus:</p>
+                    <ul>
+                        <li><strong class="highlight">Matriks Tulang</strong>: Terdiri dari 98% kolagen dan kristal <strong>hidroksiapatit</strong> (kalsium fosfat) yang memberi kekuatan mekanis.</li>
+                        <li><strong class="highlight">Osteoblas</strong>: Sel pembentuk tulang baru yang mensintesis matriks organik (osteoid).</li>
+                        <li><strong class="highlight">Osteosit</strong>: Sel tulang dewasa yang terperangkap dalam lakuna, berfungsi memelihara matriks.</li>
+                        <li><strong class="highlight">Osteoklas</strong>: Sel multinuklear raksasa untuk resorpsi dan pemrombakan jaringan tulang.</li>
+                        <li><strong class="highlight">Sistem Havers (Osteon)</strong>: Unit struktural tulang kompak, terdiri dari Saluran Havers (pembuluh darah/saraf), lamela konsentris, lakuna, dan kanalikuli.</li>
+                    </ul>
+                </div>
+                <div class="content-media">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/16467223767349126474_0" alt="Struktur Histologis Tulang">
+                    <div class="caption">Gambar 1: Histologi Osteon dan Sel Tulang</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-3">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">B. Proses Osifikasi Tulang</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Osifikasi adalah proses pembentukan dan penulangan jaringan rangka:</p>
+                    <h3 class="section-title">1. Osifikasi Intramembran</h3>
+                    <p>Pembentukan tulang langsung dari <strong>jaringan mesenkim</strong> embrional. Terjadi pada tulang pipih seperti <strong>tulang tengkorak</strong> dan klavikula.</p>
+                    
+                    <h3 class="section-title">2. Osifikasi Endokondral</h3>
+                    <p>Pembentukan tulang dengan menggantikan <strong>cetakan tulang rawan hialin</strong>. Terjadi pada mayoritas <strong>tulang panjang</strong> tubuh.</p>
+                    <ul>
+                        <li>Pusat osifikasi primer terbentuk di <strong>diafisis</strong>.</li>
+                        <li>Pusat osifikasi sekunder terbentuk di <strong>epifisis</strong>.</li>
+                        <li>Pertumbuhan panjang terjadi pada <strong>lempeng epifisis</strong>.</li>
+                    </ul>
+                </div>
+                <div class="content-media">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/10322835924808188934_0" alt="Proses Osifikasi">
+                    <div class="caption">Gambar 2: Skema Pertumbuhan Tulang & Lempeng Epifisis</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-4">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">C. Anatomi Makroskopis Tulang Panjang</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Tulang panjang memiliki struktur anatomi khas yang mendukung fungsi penopang beban:</p>
+                    <ul>
+                        <li><strong class="highlight">Epifisis</strong>: Ujung proksimal & distal tulang, terdiri dari tulang spons berisi sumsum merah.</li>
+                        <li><strong class="highlight">Diafisis</strong>: Batang utama tulang panjang, terdiri dari tulang kompak padat dengan rongga Medula (sumsum kuning/lemak).</li>
+                        <li><strong class="highlight">Metafisis</strong>: Area transisi antara diafisis dan epifisis (lokasi lempeng epifisis).</li>
+                        <li><strong class="highlight">Periosteum</strong>: Membran luar pelindung, kaya pembuluh darah & saraf, penting untuk nutrisi & pemulihan fraktur.</li>
+                        <li><strong class="highlight">Endosteum</strong>: Membran dalam yang melapisi rongga medula.</li>
+                    </ul>
+                </div>
+                <div class="content-media">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/10322835924808188934_0" alt="Anatomi Makroskopis Tulang Panjang">
+                    <div class="caption">Gambar 3: Bagian-bagian Tulang Panjang</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-5">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">D. Klasifikasi & Komponen Tulang Aksial</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Rangka Aksial membentuk sumbu tubuh tengah (terdiri dari <strong>80 tulang</strong>):</p>
+                    <ul>
+                        <li><strong class="highlight">Tengkorak (Cranium)</strong>: Melindungi otak (kranial) dan membentuk struktur wajah (visseral).</li>
+                        <li><strong class="highlight">Tulang Belakang (Vertebrae)</strong>: 7 servikal, 12 toraks, 5 lumbal, sakrum, dan koksigis. Menopang postur dan melindungi medula spinalis.</li>
+                        <li><strong class="highlight">Kerangka Dada (Thorax)</strong>: Terdiri dari <strong>Dada (Sternum)</strong> dan <strong>12 pasang Rusuk (Costae)</strong> yang melindungi organ vital jantung dan paru-paru.</li>
+                    </ul>
+                </div>
+                <div class="content-media">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/7800955669975211051_0" alt="Rangka Aksial">
+                    <div class="caption">Gambar 4: Komponen Tulang Aksial</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-6">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">E. Klasifikasi & Komponen Tulang Apendikular</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Rangka Apendikular berfungsi sebagai alat gerak anggota tubuh (terdiri dari <strong>126 tulang</strong>):</p>
+                    <ul>
+                        <li><strong class="highlight">Gelang Bahu (Pectoral)</strong>: Klavikula dan Skapula penyambung lengan atas.</li>
+                        <li><strong class="highlight">Ekstremitas Atas</strong>: Humerus (lengan atas), Radius & Ulna (lengan bawah), Karpal, Metakarpal, dan Falang.</li>
+                        <li><strong class="highlight">Gelang Panggul (Pelvic)</strong>: Tulang Koksa (Ilium, Ischium, Pubis) penopang beban tubuh.</li>
+                        <li><strong class="highlight">Ekstremitas Bawah</strong>: Femur (paha), Patela, Tibia & Fibula (tungkai), Tarsal, Metatarsal, dan Falang.</li>
+                    </ul>
+                </div>
+                <div class="content-media">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13770580540887969025_0" alt="Rangka Apendikular">
+                    <div class="caption">Gambar 5: Komponen Rangka Apendikular</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-7">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">F. Remodeling Tulang & Homeostasis Kalsium</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p><strong class="highlight">Remodeling Tulang</strong> adalah proses siklis pembongkaran tulang lama oleh <strong>Osteoklas</strong> dan pembentukan tulang baru oleh <strong>Osteoblas</strong>.</p>
+                    <h3 class="section-title">Regulasi Hormonal Kalsium darah:</h3>
+                    <ul>
+                        <li><strong class="highlight">Hormon Paratiroid (PTH)</strong>: Direspon saat kalsium darah <em>turun</em>. Meningkatkan aktivitas osteoklas untuk meresorpsi tulang dan melepas Ca²⁺ ke darah.</li>
+                        <li><strong class="highlight">Kalsitonin</strong>: Direspon saat kalsium darah <em>tinggi</em>. Memghambat osteoklas dan merangsang osteoblas menyimpan Ca²⁺ ke tulang.</li>
+                    </ul>
+                </div>
+                <div class="content-media">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/955670376236869295_0" alt="Homeostasis Kalsium">
+                    <div class="caption">Gambar 6: Siklus Homeostasis Kalsium Hormonal</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-8">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">G. Klasifikasi Sendi Berdasarkan Struktur</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Sendi dikelompokkan berdasarkan struktur penyambungnya:</p>
+                    <ul>
+                        <li><strong class="highlight">Sendi Fibrosa (Sinartrosis)</strong>: Diikat oleh jaringan ikat fibrosa, <em>tidak dapat digerakkan</em>. Contoh: Sutura tengkorak.</li>
+                        <li><strong class="highlight">Sendi Kartilaginosa (Amfiartrosis)</strong>: Diikat oleh tulang rawan, <em>pergerakan terbatas</em>. Contoh: Simfisis pubis, diskus intervertebralis.</li>
+                        <li><strong class="highlight">Sendi Sinovial (Diartrosis)</strong>: Memiliki rongga sendi ber-cairan sinovial, <em>bebas bergerak</em>. Contoh: Lutut, siku, bahu.</li>
+                    </ul>
+                </div>
+                <div class="content-media">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/9500341735261804427_0" alt="Klasifikasi Sendi">
+                    <div class="caption">Gambar 7: Jenis Sendi Berdasarkan Struktur</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-9">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">H. Jenis-jenis Gerakan Sendi Sinovial</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Sendi sinovial memungkinkan berbagai pergerakan tubuh:</p>
+                    <ul>
+                        <li><strong class="highlight">Fleksi & Ekstensi</strong>: Menekuk (memperkecil sudut) dan Meluruskan (memperbesar sudut).</li>
+                        <li><strong class="highlight">Abduksi & Adduksi</strong>: Menjauhi sumbu tengah tubuh dan Mendekati sumbu tubuh.</li>
+                        <li><strong class="highlight">Rotasi & Sirkumduksi</strong>: Memutar pada poros dan gerakan melingkar seperti kerucut.</li>
+                        <li><strong class="highlight">Supinasi & Pronasi</strong>: Menengadah dan Mengelungkupkan telapak tangan.</li>
+                    </ul>
+                </div>
+                <div class="content-media">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/10298908430504331522_0" alt="Gerakan Sendi Sinovial">
+                    <div class="caption">Gambar 8: Arah Pergerakan Sendi Sinovial</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body" id="slide-10">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">I. Kelainan & Gangguan Sistem Rangka</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Beberapa patologi dan gangguan klinis pada tulang dan sendi:</p>
+                    <ul>
+                        <li><strong class="highlight">Fraktur</strong>: Patah atau terputusnya kontinuitas jaringan tulang akibat gaya mekanis.</li>
+                        <li><strong class="highlight">Osteoporosis</strong>: Penurunan kepadatan dan massa matriks tulang sehingga rapuh.</li>
+                        <li><strong class="highlight">Deformitas Tulang Belakang</strong>: 
+                            <strong>Skoliosis</strong> (melengkung kesamping), 
+                            <strong>Lordosis</strong> (bengkok ke depan), 
+                            <strong>Kifosis</strong> (bongkok ke belakang).</li>
+                        <li><strong class="highlight">Spina Bifida</strong>: Kelainan kongenital akibat kegagalan penutupan tabung saraf spinal.</li>
+                    </ul>
+                </div>
+                <div class="content-media">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/16777229280761307620_0" alt="Kelainan Tulang Belakang">
+                    <div class="caption">Gambar 9: Kelainan Kurvatura Tulang Belakang</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <button class="nav-btn" id="btn-prev" onclick="changeSlide(-1)">&larr; Sebelumnya</button>
+            
+            <button class="nav-btn home-btn" id="btn-menu" onclick="goToSlide(1)">
+                &#9776; Daftar Pembahasan
+            </button>
+            
+            <span class="slide-counter" id="slide-counter">Slide 1 / 11</span>
+            
+            <button class="nav-btn" id="btn-next" onclick="changeSlide(1)">Selanjutnya &rarr;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 11;
+
+        const topicLabels = [
+            "Sistem Rangka (Skeletal)",
+            "Daftar Pembahasan",
+            "A. Struktur Histologis Tulang",
+            "B. Proses Osifikasi Tulang",
+            "C. Anatomi Makroskopis Tulang Panjang",
+            "D. Klasifikasi & Komponen Tulang Aksial",
+            "E. Klasifikasi & Komponen Tulang Apendikular",
+            "F. Fisiologi Remodeling & Homeostasis",
+            "G. Klasifikasi Sendi Berdasarkan Struktur",
+            "H. Jenis-jenis Gerakan Sendi Sinovial",
+            "I. Kelainan Sistem Rangka"
+        ];
+
+        function updateSlideUI() {
+            // Hide all slides
+            for (let i = 0; i < totalSlides; i++) {
+                const slideEl = document.getElementById(`slide-${i}`);
+                if (slideEl) slideEl.classList.remove('active');
+            }
+
+            // Show current slide
+            const activeSlide = document.getElementById(`slide-${currentSlide}`);
+            if (activeSlide) activeSlide.classList.add('active');
+
+            // Update top label & counter
+            document.getElementById('current-topic-label').innerText = topicLabels[currentSlide];
+            document.getElementById('slide-counter').innerText = `Slide ${currentSlide + 1} / ${totalSlides}`;
+
+            // Control Navigation Buttons Visibility
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+            const btnMenu = document.getElementById('btn-menu');
+
+            // Requirement: Slide awal (0) TIDAK ADA tombol "Sebelumnya"
+            if (currentSlide === 0) {
+                btnPrev.style.visibility = 'hidden';
+                btnMenu.style.visibility = 'hidden';
+            } else {
+                btnPrev.style.visibility = 'visible';
+                btnMenu.style.visibility = 'visible';
+            }
+
+            // Slide Terakhir
+            if (currentSlide === totalSlides - 1) {
+                btnNext.style.visibility = 'hidden';
+            } else {
+                btnNext.style.visibility = 'visible';
+            }
+        }
+
+        function changeSlide(direction) {
+            let target = currentSlide + direction;
+            if (target >= 0 && target < totalSlides) {
+                currentSlide = target;
+                updateSlideUI();
+            }
+        }
+
+        function goToSlide(slideIndex) {
+            if (slideIndex >= 0 && slideIndex < totalSlides) {
+                currentSlide = slideIndex;
+                updateSlideUI();
+            }
+        }
+
+        // Initialize UI on load
+        window.onload = function() {
+            updateSlideUI();
+        };
+    </script>
+</body>
+</html>
