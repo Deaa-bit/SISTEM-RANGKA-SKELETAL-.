@@ -141,6 +141,12 @@
             font-weight: 700;
         }
 
+        /* Khusus untuk teks nama tanpa warna merah */
+        .author-name {
+            color: var(--teks-hitam) !important;
+            font-weight: 600;
+        }
+
         ul, ol {
             margin-left: 16px;
             margin-bottom: 6px;
@@ -154,58 +160,60 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+            background: radial-gradient(circle at center, #ffffff 0%, #e8f5e9 100%);
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #c8e6c9;
-            padding: 20px;
+            padding: 24px;
         }
 
         .ornament-circle-1 {
             position: absolute;
-            width: 280px;
-            height: 280px;
+            width: 320px;
+            height: 320px;
             border-radius: 50%;
-            background: rgba(46, 125, 50, 0.07);
-            top: -90px;
-            left: -90px;
-            border: 2px dashed rgba(46, 125, 50, 0.25);
+            background: rgba(46, 125, 50, 0.06);
+            top: -100px;
+            left: -100px;
+            border: 2px dashed rgba(46, 125, 50, 0.2);
         }
 
         .ornament-circle-2 {
             position: absolute;
-            width: 340px;
-            height: 340px;
+            width: 380px;
+            height: 380px;
             border-radius: 50%;
-            background: rgba(0, 77, 64, 0.05);
-            bottom: -110px;
-            right: -110px;
+            background: rgba(0, 77, 64, 0.04);
+            bottom: -130px;
+            right: -130px;
         }
 
         .ornament-badge {
-            background-color: #E8F5E9;
-            color: var(--hijau-muda);
-            padding: 5px 16px;
+            background-color: var(--hijau-tua);
+            color: #FFFFFF;
+            padding: 6px 18px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            border: 1px solid var(--border-color);
-            margin-bottom: 12px;
+            box-shadow: 0 4px 10px rgba(0,77,64,0.15);
+            margin-bottom: 14px;
         }
 
         .authors-card {
-            margin-top: 18px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 12px 25px;
-            border-radius: 12px;
-            border-left: 5px solid var(--hijau-muda);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            padding: 16px 28px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            border-left: 6px solid var(--hijau-muda);
+            box-shadow: 0 8px 20px rgba(0, 48, 25, 0.06);
             text-align: left;
             z-index: 2;
             width: 100%;
-            max-width: 480px;
+            max-width: 460px;
         }
 
         /* ==================== GRID CONTAINER (SLIDE 1) ==================== */
@@ -266,6 +274,13 @@
             min-height: 480px;
         }
 
+        .content-flex-vertical {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: 14px;
+        }
+
         .content-text {
             flex: 1;
             min-width: 0;
@@ -284,7 +299,7 @@
 
         .media-row {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
             flex: 1;
         }
@@ -384,18 +399,18 @@
                 <div class="ornament-circle-2"></div>
                 
                 <div class="ornament-badge">Media Pembelajaran Biologi</div>
-                <h1 class="main-title" style="font-size: 32px;">SISTEM RANGKA (SKELETAL)</h1>
-                <h2 class="sub-title" style="border:none; text-align:center; margin-bottom: 5px; font-size: 21px;">Anatomi & Fisiologi Tubuh Manusia</h2>
-                <p style="font-size: 13.5px; z-index:2;">Dosen Pengampu: <strong>Dr. Dani Ramdani S.Pd., M.Pd.</strong></p>
+                <h1 class="main-title" style="font-size: 34px; letter-spacing: 1px;">SISTEM RANGKA (SKELETAL)</h1>
+                <h2 class="sub-title" style="border:none; text-align:center; margin-bottom: 6px; font-size: 20px; color: var(--hijau-muda);">Anatomi & Fisiologi Tubuh Manusia</h2>
+                <p style="font-size: 13.5px; z-index:2; color: #424242;">Dosen Pengampu: <strong style="color: var(--hijau-tua);">Dr. Dani Ramdani S.Pd., M.Pd.</strong></p>
                 
                 <div class="authors-card">
-                    <p style="margin-bottom:6px; font-size:12px; text-transform:uppercase; letter-spacing:0.5px; color:var(--hijau-tua);"><strong>Kelompok Penyusun:</strong></p>
-                    <p style="margin:2px 0; font-size:13px;">1. <strong>Dea Aprilia</strong> (242154111007)</p>
-                    <p style="margin:2px 0; font-size:13px;">2. <strong>Salsabila Farhana</strong> (242154111049)</p>
-                    <p style="margin:2px 0; font-size:13px;">3. <strong>Melani Destiny</strong> (242154111050)</p>
+                    <p style="margin-bottom:8px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--hijau-tua);">Kelompok 3:</p>
+                    <p style="margin:4px 0; font-size:13.5px;"><span class="author-name">1. Dea Aprilia</span> (242154111007)</p>
+                    <p style="margin:4px 0; font-size:13.5px;"><span class="author-name">2. Salsabila Farhana</span> (242154111049)</p>
+                    <p style="margin:4px 0; font-size:13.5px;"><span class="author-name">3. Melani Destiny</span> (242154111050)</p>
                 </div>
 
-                <button class="nav-btn" style="margin-top: 20px; padding: 10px 24px; font-size:14px; z-index:2; box-shadow: 0 4px 10px rgba(46,125,50,0.3);" onclick="goToSlide(1)">
+                <button class="nav-btn" style="margin-top: 22px; padding: 12px 28px; font-size:14px; z-index:2; box-shadow: 0 4px 14px rgba(46,125,50,0.35); border-radius: 30px;" onclick="goToSlide(1)">
                     Mulai Presentasi &rarr;
                 </button>
             </div>
@@ -654,38 +669,36 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 9: BAHASAN H ==================== -->
+        <!-- ==================== SLIDE 9: BAHASAN H (RESTRUCTURED) ==================== -->
         <div class="slide-body" id="slide-9">
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">H. Jenis-jenis Gerakan Sendi Sinovial</h2>
-            <div class="content-flex">
-                <div class="content-text">
+            <div class="content-flex-vertical">
+                <!-- Teks di Atas -->
+                <div class="content-text" style="flex: 0 0 auto;">
                     <p>Sendi sinovial memungkinkan pergerakan mekanis spesifik:</p>
-                    <ul>
+                    <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px;">
                         <li><strong class="highlight">Fleksi & Ekstensi</strong>: Menekuk (mengurangi sudut sendi) vs Meluruskan (memperbesar sudut sendi).</li>
                         <li><strong class="highlight">Abduksi & Adduksi</strong>: Gerakan menjauhi poros/garis tengah tubuh vs gerakan mendekati poros/garis tengah tubuh.</li>
-                        <li><strong class="highlight">Rotasi Ekstremitas</strong>: Gerakan memutar tulang pada poros panjangnya, mencakup:
-                            <ul>
-                                <li><strong class="highlight">Rotasi Medial (ke dalam)</strong>: Memutar permukaan anterior tulang ke arah garis tengah tubuh.</li>
-                                <li><strong class="highlight">Rotasi Lateral (keluar)</strong>: Memutar permukaan anterior tulang menjauhi garis tengah tubuh.</li>
-                            </ul>
+                        <li style="grid-column: span 2;"><strong class="highlight">Rotasi Ekstremitas</strong>: Memutar tulang pada poros panjangnya:
+                            <span style="font-size:12.5px;"> <strong>Rotasi Medial</strong> (ke arah garis tengah) & <strong>Rotasi Lateral</strong> (menjauhi garis tengah).</span>
                         </li>
                     </ul>
                 </div>
-                <div class="content-media-grid">
-                    <div class="media-row">
-                        <div class="media-box">
-                            <img src="gambar8A.png" alt="Fleksi dan Ekstensi">
-                            <div class="caption">Gambar 8A: Gerakan Fleksi & Ekstensi</div>
-                        </div>
-                        <div class="media-box">
-                            <img src="gambar8B.png" alt="Abduksi dan Adduksi">
-                            <div class="caption">Gambar 8B: Gerakan Abduksi & Adduksi</div>
-                        </div>
-                        <div class="media-box">
-                            <img src="gambar8C.png" alt="Rotasi Medial dan Lateral">
-                            <div class="caption">Gambar 8C: Rotasi Medial & Lateral</div>
-                        </div>
+                
+                <!-- Gambar 8A, 8B, 8C Sejajar di Bawah -->
+                <div class="media-row" style="flex: 1;">
+                    <div class="media-box">
+                        <img src="gambar8A.png" alt="Fleksi dan Ekstensi" style="height: 220px;">
+                        <div class="caption">Gambar 8A: Gerakan Fleksi & Ekstensi</div>
+                    </div>
+                    <div class="media-box">
+                        <img src="gambar8B.png" alt="Abduksi dan Adduksi" style="height: 220px;">
+                        <div class="caption">Gambar 8B: Gerakan Abduksi & Adduksi</div>
+                    </div>
+                    <div class="media-box">
+                        <img src="gambar8C.png" alt="Rotasi Medial dan Lateral" style="height: 220px;">
+                        <div class="caption">Gambar 8C: Rotasi Medial & Lateral</div>
                     </div>
                 </div>
             </div>
