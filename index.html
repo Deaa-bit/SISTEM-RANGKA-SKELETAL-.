@@ -278,7 +278,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            gap: 14px;
+            gap: 12px;
         }
 
         .content-text {
@@ -317,18 +317,41 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.03);
             width: 100%;
             height: 100%;
+            overflow: hidden;
         }
 
+        /* Optimasi Kualitas Gambar Agar Tidak Pecah Saat Zoom */
         .media-box img {
             width: 100%;
             height: 180px;
             object-fit: contain;
             border-radius: 4px;
             background-color: #FFFFFF;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: high-quality;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* Efek Zoom Halus Saat Hover Tanpa Pecah */
+        .media-box:hover img {
+            transform: scale(1.04);
         }
 
         .media-box.single img {
             height: 430px;
+        }
+
+        /* Khusus Slide 8 (Gambar 8A, 8B, 8C): Dikecilkan dan Tetap Jernih */
+        .media-box-small {
+            padding: 6px;
+        }
+
+        .media-box-small img {
+            height: 145px !important; /* Ukuran lebih kecil agar proporsional dengan teks */
+            max-width: 100%;
         }
 
         .caption {
@@ -631,7 +654,6 @@
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">G. Klasifikasi Sendi Berdasarkan Struktur</h2>
             <div class="content-flex">
-                <!-- Kolom Kiri: Teks & Gambar 7A & 7B di Bawahnya -->
                 <div class="content-text">
                     <p>Sendi (Artikulasi) dikelompokkan berdasarkan struktur penyambungnya:</p>
                     <ul>
@@ -646,7 +668,6 @@
                         4. <strong>Sendi Kondiloid (Ellipsoid)</strong> | 5. <strong>Sendi Pelana (Saddle)</strong> | 6. <strong>Sendi Geser (Plane/Gliding)</strong>
                     </p>
 
-                    <!-- Container Foto 7A & 7B di bawah tulisan -->
                     <div style="display: flex; gap: 8px; margin-top: 6px; flex: 1;">
                         <div class="media-box">
                             <img src="gambar7A.png" alt="Tipe Sendi" style="height: 140px;">
@@ -659,7 +680,6 @@
                     </div>
                 </div>
 
-                <!-- Kolom Kanan: Gambar 7C Lebih Besar -->
                 <div class="content-media-grid">
                     <div class="media-box single">
                         <img src="gambar7C.png" alt="Jenis Sendi Sinovial" style="height: 430px;">
@@ -669,35 +689,35 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 9: BAHASAN H (RESTRUCTURED) ==================== -->
+        <!-- ==================== SLIDE 9: BAHASAN H (PERBAIKAN UKURAN & RESOLUSI FOTO) ==================== -->
         <div class="slide-body" id="slide-9">
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">H. Jenis-jenis Gerakan Sendi Sinovial</h2>
             <div class="content-flex-vertical">
-                <!-- Teks di Atas -->
+                <!-- Teks Pembahasan yang Proporsional & Rapi di Atas -->
                 <div class="content-text" style="flex: 0 0 auto;">
-                    <p>Sendi sinovial memungkinkan pergerakan mekanis spesifik:</p>
-                    <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px;">
+                    <p style="font-size: 14px; margin-bottom: 8px;">Sendi sinovial memungkinkan pergerakan mekanis spesifik tubuh:</p>
+                    <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 18px;">
                         <li><strong class="highlight">Fleksi & Ekstensi</strong>: Menekuk (mengurangi sudut sendi) vs Meluruskan (memperbesar sudut sendi).</li>
-                        <li><strong class="highlight">Abduksi & Adduksi</strong>: Gerakan menjauhi poros/garis tengah tubuh vs gerakan mendekati poros/garis tengah tubuh.</li>
+                        <li><strong class="highlight">Abduksi & Adduksi</strong>: Gerakan menjauhi poros tubuh vs gerakan mendekati poros tubuh.</li>
                         <li style="grid-column: span 2;"><strong class="highlight">Rotasi Ekstremitas</strong>: Memutar tulang pada poros panjangnya:
-                            <span style="font-size:12.5px;"> <strong>Rotasi Medial</strong> (ke arah garis tengah) & <strong>Rotasi Lateral</strong> (menjauhi garis tengah).</span>
+                            <span style="font-size:13px;"> <strong>Rotasi Medial</strong> (ke arah garis tengah) & <strong>Rotasi Lateral</strong> (menjauhi garis tengah).</span>
                         </li>
                     </ul>
                 </div>
                 
-                <!-- Gambar 8A, 8B, 8C Sejajar di Bawah -->
-                <div class="media-row" style="flex: 1;">
-                    <div class="media-box">
-                        <img src="gambar8A.png" alt="Fleksi dan Ekstensi" style="height: 220px;">
-                        <div class="caption">Gambar 8A: Gerakan Fleksi & Ekstensi</div>
+                <!-- Foto 8A, 8B, 8C yang Diperkecil & Diberi Rendering Tajam -->
+                <div class="media-row" style="flex: 0 0 auto; margin-top: 10px; justify-content: center; gap: 14px;">
+                    <div class="media-box media-box-small">
+                        <img src="gambar8A.png" alt="Fleksi dan Ekstensi">
+                        <div class="caption">Gambar 8A: Fleksi & Ekstensi</div>
                     </div>
-                    <div class="media-box">
-                        <img src="gambar8B.png" alt="Abduksi dan Adduksi" style="height: 220px;">
-                        <div class="caption">Gambar 8B: Gerakan Abduksi & Adduksi</div>
+                    <div class="media-box media-box-small">
+                        <img src="gambar8B.png" alt="Abduksi dan Adduksi">
+                        <div class="caption">Gambar 8B: Abduksi & Adduksi</div>
                     </div>
-                    <div class="media-box">
-                        <img src="gambar8C.png" alt="Rotasi Medial dan Lateral" style="height: 220px;">
+                    <div class="media-box media-box-small">
+                        <img src="gambar8C.png" alt="Rotasi Medial dan Lateral">
                         <div class="caption">Gambar 8C: Rotasi Medial & Lateral</div>
                     </div>
                 </div>
@@ -709,7 +729,6 @@
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">I. Kelainan & Gangguan Sistem Rangka</h2>
             <div class="content-flex">
-                <!-- Kolom Kiri: Teks + Gambar 9A + Gambar 9B -->
                 <div class="content-text">
                     <p>Patologi klinis pada sistem rangka:</p>
                     <ul>
@@ -723,7 +742,6 @@
                         <li><strong class="highlight">Spina Bifida</strong>: Kelainan kongenital cacat tabung saraf di mana arkus vertebra tidak menyatu dengan sempurna sehingga tidak menutupi medula spinalis secara utuh.</li>
                     </ul>
 
-                    <!-- Container khusus Gambar 9A & 9B di bawah tulisan -->
                     <div style="display: flex; gap: 8px; margin-top: 6px; flex: 1;">
                         <div class="media-box">
                             <img src="gambar9A.png" alt="Kelainan Spina" style="height: 150px;">
@@ -736,7 +754,6 @@
                     </div>
                 </div>
 
-                <!-- Kolom Kanan: Gambar 9C -->
                 <div class="content-media-grid">
                     <div class="media-box single">
                         <img src="gambar9C.png" alt="Spina Bifida" style="height: 430px;">
@@ -746,7 +763,7 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 11: CLOSING / UCAPAN TERIMA KASIH ==================== -->
+        <!-- ==================== SLIDE 11: CLOSING ==================== -->
         <div class="slide-body" id="slide-11">
             <div class="cover-wrapper" style="background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);">
                 <div class="ornament-circle-1" style="border-color: rgba(0, 77, 64, 0.2);"></div>
@@ -807,26 +824,21 @@
         ];
 
         function updateSlideUI() {
-            // Hide all slides
             for (let i = 0; i < totalSlides; i++) {
                 const slideEl = document.getElementById(`slide-${i}`);
                 if (slideEl) slideEl.classList.remove('active');
             }
 
-            // Show current slide
             const activeSlide = document.getElementById(`slide-${currentSlide}`);
             if (activeSlide) activeSlide.classList.add('active');
 
-            // Update top label & counter
             document.getElementById('current-topic-label').innerText = topicLabels[currentSlide];
             document.getElementById('slide-counter').innerText = `Slide ${currentSlide + 1} / ${totalSlides}`;
 
-            // Control Navigation Buttons Visibility
             const btnPrev = document.getElementById('btn-prev');
             const btnNext = document.getElementById('btn-next');
             const btnMenu = document.getElementById('btn-menu');
 
-            // Slide awal (0): SEMBUNYIKAN tombol "Sebelumnya", "Daftar Pembahasan", dan "Selanjutnya"
             if (currentSlide === 0) {
                 btnPrev.style.visibility = 'hidden';
                 btnMenu.style.visibility = 'hidden';
@@ -837,7 +849,6 @@
                 btnNext.style.visibility = 'visible';
             }
 
-            // Slide Terakhir: SEMBUNYIKAN tombol "Selanjutnya"
             if (currentSlide === totalSlides - 1) {
                 btnNext.style.visibility = 'hidden';
             }
