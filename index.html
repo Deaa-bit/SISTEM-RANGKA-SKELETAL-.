@@ -130,9 +130,9 @@
         }
 
         p, li {
-            font-size: 13px;
+            font-size: 13.5px;
             color: var(--teks-hitam);
-            line-height: 1.45;
+            line-height: 1.5;
             margin-bottom: 5px;
         }
 
@@ -141,14 +141,13 @@
             font-weight: 700;
         }
 
-        /* Khusus untuk teks nama tanpa warna merah */
         .author-name {
             color: var(--teks-hitam) !important;
             font-weight: 600;
         }
 
         ul, ol {
-            margin-left: 16px;
+            margin-left: 18px;
             margin-bottom: 6px;
         }
 
@@ -299,67 +298,66 @@
 
         .media-row {
             display: flex;
-            gap: 12px;
+            gap: 14px;
             width: 100%;
-            flex: 1;
         }
 
         .media-box {
             flex: 1;
-            background: #F9F9F9;
-            border: 1px solid #DCE7E1;
+            background: #FFFFFF;
+            border: 1px solid #C8E6C9;
             padding: 8px;
-            border-radius: 8px;
+            border-radius: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-            width: 100%;
-            height: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             overflow: hidden;
         }
 
-        /* Optimasi Kualitas Gambar Agar Tidak Pecah Saat Zoom */
+        /* KUALITAS GAMBAR MAKSIMAL (ANTI TAJAM & TIDAK PECAH) */
         .media-box img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: contain;
-            border-radius: 4px;
+            border-radius: 6px;
             background-color: #FFFFFF;
+            /* Rendering Mesin Grafis */
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
             image-rendering: high-quality;
-            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            backface-visibility: hidden;
             transform: translateZ(0);
+            backface-visibility: hidden;
+            transition: transform 0.25s ease-in-out;
         }
 
-        /* Efek Zoom Halus Saat Hover Tanpa Pecah */
         .media-box:hover img {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .media-box.single img {
             height: 430px;
         }
 
-        /* Khusus Slide 8 (Gambar 8A, 8B, 8C): Diberi Ukuran Pas & Disimpan Di Bawah */
+        /* OPTIMASI KHUSUS SLIDE 8 (GAMBAR 8A, 8B, 8C) */
         .media-box-small {
-            padding: 6px;
+            padding: 8px;
+            background: #FFFFFF;
         }
 
         .media-box-small img {
-            height: 135px !important;
-            max-width: 100%;
+            height: 190px !important;
+            width: 100%;
+            object-fit: contain;
         }
 
         .caption {
-            font-size: 11px;
-            color: #555555;
+            font-size: 11.5px;
+            color: #424242;
             margin-top: 6px;
             text-align: center;
-            font-style: italic;
+            font-weight: 500;
             line-height: 1.2;
         }
 
@@ -689,25 +687,33 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 9: BAHASAN H (FOTO DIGESER KE BAWAH) ==================== -->
+        <!-- ==================== SLIDE 9: BAHASAN H (SUSUNAN KE BAWAH + FOTO TAJAM) ==================== -->
         <div class="slide-body" id="slide-9">
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">H. Jenis-jenis Gerakan Sendi Sinovial</h2>
             <div class="content-flex-vertical">
-                <!-- Teks Pembahasan Bebas Di Atas -->
-                <div class="content-text" style="flex: 0 0 auto; margin-bottom: 15px;">
-                    <p style="font-size: 14px; margin-bottom: 10px;">Sendi sinovial memungkinkan pergerakan mekanis spesifik tubuh:</p>
-                    <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px;">
-                        <li><strong class="highlight">Fleksi & Ekstensi</strong>: Menekuk (mengurangi sudut sendi) vs Meluruskan (memperbesar sudut sendi).</li>
-                        <li><strong class="highlight">Abduksi & Adduksi</strong>: Gerakan menjauhi poros tubuh vs gerakan mendekati poros tubuh.</li>
-                        <li style="grid-column: span 2;"><strong class="highlight">Rotasi Ekstremitas</strong>: Memutar tulang pada poros panjangnya:
-                            <span style="font-size:13px;"> <strong>Rotasi Medial</strong> (ke arah garis tengah) & <strong>Rotasi Lateral</strong> (menjauhi garis tengah).</span>
+                <!-- TEKS BAHASAN DISUSUN FULL KE BAWAH (SINGLE COLUMN) -->
+                <div class="content-text" style="flex: 0 0 auto;">
+                    <p style="font-size: 14px; margin-bottom: 8px;">Sendi sinovial memungkinkan pergerakan mekanis spesifik tubuh:</p>
+                    <ul style="display: block; margin-left: 20px;">
+                        <li style="margin-bottom: 6px;">
+                            <strong class="highlight">Fleksi & Ekstensi</strong>: Menekuk (mengurangi sudut sendi) vs Meluruskan (memperbesar sudut sendi).
+                        </li>
+                        <li style="margin-bottom: 6px;">
+                            <strong class="highlight">Abduksi & Adduksi</strong>: Gerakan menjauhi poros tubuh (Abduksi) vs gerakan mendekati poros tubuh (Adduksi).
+                        </li>
+                        <li style="margin-bottom: 6px;">
+                            <strong class="highlight">Rotasi Ekstremitas</strong>: Memutar tulang pada poros panjangnya, terdiri dari:
+                            <br>
+                            &bull; <strong>Rotasi Medial</strong> (ke arah garis tengah tubuh) 
+                            <br>
+                            &bull; <strong>Rotasi Lateral</strong> (menjauhi garis tengah tubuh)
                         </li>
                     </ul>
                 </div>
                 
-                <!-- Foto 8A, 8B, 8C Disusun Rapi di Bagian Bawah -->
-                <div class="media-row" style="flex: 0 0 auto; margin-top: auto; padding-top: 15px; justify-content: center; gap: 16px;">
+                <!-- FOTO 8A, 8B, 8C DI BAWAH DENGAN UKURAN LEBIH BESAR & KETAJAMAN TINGGI -->
+                <div class="media-row" style="flex: 0 0 auto; margin-top: 15px; justify-content: center; gap: 14px;">
                     <div class="media-box media-box-small">
                         <img src="gambar8A.png" alt="Fleksi dan Ekstensi">
                         <div class="caption">Gambar 8A: Fleksi & Ekstensi</div>
