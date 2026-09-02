@@ -262,12 +262,15 @@
         .content-flex {
             display: flex;
             gap: 16px;
-            align-items: flex-start;
+            align-items: stretch;
+            min-height: 480px;
         }
 
         .content-text {
             flex: 1;
             min-width: 0;
+            display: flex;
+            flex-direction: column;
         }
 
         .content-media-grid {
@@ -276,43 +279,47 @@
             flex-direction: column;
             gap: 10px;
             min-width: 0;
+            justify-content: center;
         }
 
         .media-row {
             display: flex;
             gap: 10px;
             width: 100%;
+            flex: 1;
         }
 
         .media-box {
             flex: 1;
             background: #F9F9F9;
             border: 1px solid #DCE7E1;
-            padding: 6px;
+            padding: 8px;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            width: 100%;
+            height: 100%;
         }
 
         .media-box img {
             width: 100%;
-            height: 145px;
+            height: 180px;
             object-fit: contain;
             border-radius: 4px;
             background-color: #FFFFFF;
         }
 
         .media-box.single img {
-            height: 320px;
+            height: 430px;
         }
 
         .caption {
-            font-size: 10.5px;
+            font-size: 11px;
             color: #555555;
-            margin-top: 4px;
+            margin-top: 6px;
             text-align: center;
             font-style: italic;
             line-height: 1.2;
@@ -660,6 +667,7 @@
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">I. Kelainan & Gangguan Sistem Rangka</h2>
             <div class="content-flex">
+                <!-- Kolom Kiri: Teks + Gambar 9A + Gambar 9B -->
                 <div class="content-text">
                     <p>Patologi klinis pada sistem rangka:</p>
                     <ul>
@@ -669,20 +677,28 @@
                             <strong class="highlight">Skoliosis</strong> (melengkung ke samping), 
                             <strong class="highlight">Lordosis</strong> (bengkok lumbal ke depan), 
                             <strong class="highlight">Kifosis</strong> (bongkok toraks ke belakang).</li>
-                        <li><strong class="highlight">Deformitas pada ekstremitas bawah </strong>: Kaki O dan Kaki X</li>
+                        <li><strong class="highlight">Deformitas pada ekstremitas bawah</strong>: Kaki O dan Kaki X.</li>
                     </ul>
+
+                    <!-- Container khusus Gambar 9A & 9B di bawah tulisan -->
+                    <div style="display: flex; gap: 8px; margin-top: 10px; flex: 1;">
+                        <div class="media-box">
+                            <img src="gambar9A.png" alt="Kelainan Spina" style="height: 180px;">
+                            <div class="caption">Gambar 9A: Skoliosis, Lordosis, Kifosis</div>
+                        </div>
+                        <div class="media-box">
+                            <img src="gambar9B.png" alt="Deformitas Ekstremitas Bawah" style="height: 180px;">
+                            <div class="caption">Gambar 9B: Deformitas ekstremitas bawah (A) Bowlegs, (B) knock-knee</div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Kolom Kanan: Gambar 9C -->
                 <div class="content-media-grid">
-                    <div class="media-box">
-                        <img src="gambar9A.png" alt="Kelainan Spina">
-                        <div class="caption">Gambar 9A: Skoliosis, Lordosis, Kifosis</div>
+                    <div class="media-box single">
+                        <img src="gambar9C.png" alt="Spina Bifida" style="height: 430px;">
+                        <div class="caption">Gambar 9C: Spina Bifida</div>
                     </div>
-                    <div class="media-box">
-                        <img src="gambar9B.png" alt="Osteoporosis">
-                        <div class="caption">Gambar 9B: Deformitas pada ekstremitas bawah. (A) Bowlegs, (B) knock-knee.</div>
-                    </div>
-                        <img src="gambar9C.png" alt="Osteoporosis">
-                        <div class="caption">Gambar 9C: Bifida Spina</div>
                 </div>
             </div>
         </div>
