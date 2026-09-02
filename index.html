@@ -123,17 +123,17 @@
         h3.section-title {
             font-family: 'Cardo', serif;
             color: var(--hijau-muda);
-            font-size: 15px;
+            font-size: 14px;
             margin-top: 6px;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             font-weight: 700;
         }
 
         p, li {
-            font-size: 13.5px;
+            font-size: 12.5px;
             color: var(--teks-hitam);
-            line-height: 1.5;
-            margin-bottom: 5px;
+            line-height: 1.45;
+            margin-bottom: 4px;
         }
 
         strong, .highlight {
@@ -147,8 +147,8 @@
         }
 
         ul, ol {
-            margin-left: 18px;
-            margin-bottom: 6px;
+            margin-left: 16px;
+            margin-bottom: 4px;
         }
 
         /* ==================== COVER ORNAMENTS ==================== */
@@ -298,7 +298,7 @@
 
         .media-row {
             display: flex;
-            gap: 14px;
+            gap: 10px;
             width: 100%;
         }
 
@@ -306,7 +306,7 @@
             flex: 1;
             background: #FFFFFF;
             border: 1px solid #C8E6C9;
-            padding: 8px;
+            padding: 6px;
             border-radius: 10px;
             display: flex;
             flex-direction: column;
@@ -318,7 +318,7 @@
 
         .media-box img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: contain;
             border-radius: 6px;
             background-color: #FFFFFF;
@@ -343,12 +343,28 @@
         }
 
         .caption {
-            font-size: 11.5px;
+            font-size: 11px;
             color: #424242;
-            margin-top: 6px;
+            margin-top: 4px;
             text-align: center;
             font-weight: 500;
             line-height: 1.2;
+        }
+
+        /* Custom style untuk Slide 5 (Grid 3 Gambar) */
+        .media-row-three {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .media-row-three .media-box {
+            padding: 4px;
+        }
+
+        .media-row-three .media-box img {
+            height: 135px;
         }
 
         /* ==================== FOOTER / NAVIGATION ==================== */
@@ -524,8 +540,8 @@
                         <div class="caption">Gambar 2A: Tahapan Osifikasi Endokondral</div>
                     </div>
                     <div class="media-box">
-                        <img src="gambar2B.png" alt="Osifiskasi Intramembranosa">
-                        <div class="caption">Gambar 2B: Osifikasi Intramembranosa</div>
+                        <img src="gambar2B.png" alt="Lempeng Pertumbuhan">
+                        <div class="caption">Gambar 2B: Zona Pertumbuhan Lempeng Epifisis</div>
                     </div>
                 </div>
             </div>
@@ -561,28 +577,49 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 5: BAHASAN D ==================== -->
+        <!-- ==================== SLIDE 5: BAHASAN D (REVISED) ==================== -->
         <div class="slide-body" id="slide-5">
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
-            <h2 class="sub-title">D. Klasifikasi & Komponen Tulang Aksial</h2>
-            <div class="content-flex">
-                <div class="content-text">
-                    <p>Rangka Aksial (terdiri atas <strong>80 tulang</strong>) membentuk sumbu tubuh:</p>
+            <h2 class="sub-title">D. Kerangka Aksial Manusia</h2>
+            
+            <p style="margin-bottom: 6px;">
+                Kerangka aksial merupakan bagian rangka yang membentuk sumbu utama tubuh dan berfungsi menopang tubuh serta melindungi organ-organ vital. Kerangka aksial terdiri atas:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+                <div>
+                    <h3 class="section-title">1. Tengkorak (Cranium)</h3>
+                    <p style="margin-bottom: 2px;">Melindungi otak dan membentuk struktur kepala serta wajah. Terdiri atas:</p>
                     <ul>
-                        <li><strong class="highlight">Tengkorak (Cranium)</strong>: 8 tulang kranial pelindung otak & 14 tulang pembentuk wajah.</li>
-                        <li><strong class="highlight">Vertebrae (26 Ruas)</strong>: 7 Servikal (termasuk Atlas & Aksis), 12 Toraks, 5 Lumbal, Sakrum, & Koksigis.</li>
-                        <li><strong class="highlight">Kerangka Dada (Thorax)</strong>: Sternum & <strong class="highlight">12 pasang Rusuk</strong> (7 sejati, 3 palsu, 2 melayang).</li>
+                        <li><strong class="highlight">Neurocranium</strong> &rarr; melindungi otak dan membentuk rongga kranium. Terdiri atas frontal, parietal, temporal, oksipital, sphenoid, dan ethmoid.</li>
+                        <li><strong class="highlight">Viscerocranium</strong> &rarr; membentuk kerangka wajah. Terdiri atas maxilla, mandibula, zygomatic, nasal, lacrimal, palatine, vomer, dan inferior nasal concha.</li>
                     </ul>
                 </div>
-                <div class="content-media-grid">
-                    <div class="media-box">
-                        <img src="gambar4A.png" alt="Rangka Aksial">
-                        <div class="caption">Gambar 4A: Anatomi Rangka Aksial Utama</div>
-                    </div>
-                    <div class="media-box">
-                        <img src="gambar4B.png" alt="Vertebrae">
-                        <div class="caption">Gambar 4B: Kurvatura Tulang Belakang</div>
-                    </div>
+
+                <div>
+                    <h3 class="section-title">2. Kolumna Vertebralis</h3>
+                    <p>Berfungsi menopang tubuh, mempertahankan postur, mendukung pergerakan, dan melindungi medula spinalis. Terdiri atas <strong>33 vertebra</strong>, yaitu 7 servikal, 12 torakal, 5 lumbal, 5 sakral yang menyatu, dan 4 koksigeal yang menyatu.</p>
+                </div>
+
+                <div>
+                    <h3 class="section-title">3. Toraks</h3>
+                    <p>Toraks (Sangkar Dada) merupakan bagian dari rangka aksial yang membentuk rongga dada. Toraks terdiri atas 12 vertebra torakal, sternum, 12 pasang tulang rusuk (costae), dan kartilago kostalis. Struktur ini berfungsi melindungi jantung dan paru-paru serta membantu proses pernapasan.</p>
+                </div>
+            </div>
+
+            <!-- Grid 3 Gambar disesuaikan secara simetris -->
+            <div class="media-row-three">
+                <div class="media-box">
+                    <img src="gambar4A.png" alt="Tengkorak / Cranium">
+                    <div class="caption">Gambar 4A: Anatomi Tengkorak</div>
+                </div>
+                <div class="media-box">
+                    <img src="gambar4B.png" alt="Kolumna Vertebralis">
+                    <div class="caption">Gambar 4B: Kurvatura Vertebrae</div>
+                </div>
+                <div class="media-box">
+                    <img src="gambar4C.png" alt="Tulang Toraks">
+                    <div class="caption">Gambar 4C: Tulang Toraks</div>
                 </div>
             </div>
         </div>
@@ -646,24 +683,24 @@
                     <p>Sendi (Artikulasi) dikelompokkan berdasarkan struktur penyambungnya:</p>
                     <ul>
                         <li><strong class="highlight">Sendi Fibrosa (Sinartrosis)</strong>: Diikat serat fibrosa padat. Mati/tidak bisa bergerak. Contoh: Sutura tengkorak.</li>
-                        <li><strong class="highlight">Sendi Kartilag0 (Amfiartrosis)</strong>: Diikat tulang rawan. Gerakan terbatas. Contoh: Simfisis pubis.</li>
+                        <li><strong class="highlight">Sendi Kartilaginosa (Amfiartrosis)</strong>: Diikat tulang rawan. Gerakan terbatas. Contoh: Simfisis pubis.</li>
                         <li><strong class="highlight">Sendi Sinovial (Diartrosis)</strong>: Memiliki rongga sinovial & pelumas. Bebas bergerak. Contoh: Peluru, engsel, putar, kondiloid, pelana, geser.</li>
                     </ul>
                     
                     <h3 class="section-title">Enam Jenis Sendi Sinovial:</h3>
                     <p style="font-size: 12px; margin-bottom: 8px;">
-                        1. <strong>Sendi Engsel (hinge joint)</strong> | 2. <strong>Sendi Putar (Pivot joint)</strong> | 3. <strong>Sendi Pelana (Sanddle joint)</strong><br>
-                        4. <strong>Sendi Kondiloid (Condyloid joint)</strong> | 5. <strong>Sendi Peluru (Ball and socket joint)</strong> | 6. <strong>Sendi Geser (Plane joint)</strong>
+                        1. <strong>Sendi Engsel (Ginglymus)</strong> | 2. <strong>Sendi Putar (Pivot)</strong> | 3. <strong>Sendi Peluru (Ball and Socket)</strong><br>
+                        4. <strong>Sendi Kondiloid (Ellipsoid)</strong> | 5. <strong>Sendi Pelana (Saddle)</strong> | 6. <strong>Sendi Geser (Plane/Gliding)</strong>
                     </p>
 
                     <div style="display: flex; gap: 8px; margin-top: 6px; flex: 1;">
                         <div class="media-box">
                             <img src="gambar7A.png" alt="Tipe Sendi" style="height: 140px;">
-                            <div class="caption">Gambar 7A: Sendi Fibrosa</div>
+                            <div class="caption">Gambar 7A: Klasifikasi Sendi</div>
                         </div>
                         <div class="media-box">
                             <img src="gambar7B.png" alt="Rongga Sinovial" style="height: 140px;">
-                            <div class="caption">Gambar 7B: Sendi Kartilago</div>
+                            <div class="caption">Gambar 7B: Anatomi Sendi Sinovial</div>
                         </div>
                     </div>
                 </div>
@@ -808,7 +845,7 @@
             "A. Struktur Histologis Tulang",
             "B. Proses Osifikasi Tulang",
             "C. Anatomi Makroskopis Tulang Panjang",
-            "D. Klasifikasi & Komponen Tulang Aksial",
+            "D. Kerangka Aksial Manusia",
             "E. Klasifikasi & Komponen Tulang Apendikular",
             "F. Fisiologi Remodeling & Homeostasis",
             "G. Klasifikasi Sendi Berdasarkan Struktur",
