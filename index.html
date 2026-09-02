@@ -316,38 +316,30 @@
             overflow: hidden;
         }
 
-        /* KUALITAS GAMBAR MAKSIMAL (ANTI TAJAM & TIDAK PECAH) */
+        /* OPERASIONAL GAMBAR BESAR KELIHATAN JELAS DI LAYAR (TANPA ZOOM) */
         .media-box img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: contain;
             border-radius: 6px;
             background-color: #FFFFFF;
-            /* Rendering Mesin Grafis */
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
-            image-rendering: high-quality;
             transform: translateZ(0);
-            backface-visibility: hidden;
-            transition: transform 0.25s ease-in-out;
-        }
-
-        .media-box:hover img {
-            transform: scale(1.03);
         }
 
         .media-box.single img {
-            height: 430px;
+            height: 440px;
         }
 
-        /* OPTIMASI KHUSUS SLIDE 8 (GAMBAR 8A, 8B, 8C) */
-        .media-box-small {
-            padding: 8px;
+        /* KHUSUS FOTO SLIDE 9 (GERAKAN SENDI 8A, 8B, 8C) DIBERSIHKAN UKURANNYA */
+        .media-box-large {
+            padding: 10px;
             background: #FFFFFF;
         }
 
-        .media-box-small img {
-            height: 190px !important;
+        .media-box-large img {
+            height: 240px !important;
             width: 100%;
             object-fit: contain;
         }
@@ -680,19 +672,19 @@
 
                 <div class="content-media-grid">
                     <div class="media-box single">
-                        <img src="gambar7C.png" alt="Jenis Sendi Sinovial" style="height: 430px;">
+                        <img src="gambar7C.png" alt="Jenis Sendi Sinovial" style="height: 440px;">
                         <div class="caption">Gambar 7C: Jenis-jenis Sendi Sinovial</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ==================== SLIDE 9: BAHASAN H (SUSUNAN KE BAWAH + FOTO TAJAM) ==================== -->
+        <!-- ==================== SLIDE 9: BAHASAN H (SUSUNAN KE BAWAH + GAMBAR BESAR & JELAS) ==================== -->
         <div class="slide-body" id="slide-9">
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">H. Jenis-jenis Gerakan Sendi Sinovial</h2>
             <div class="content-flex-vertical">
-                <!-- TEKS BAHASAN DISUSUN FULL KE BAWAH (SINGLE COLUMN) -->
+                <!-- TEKS BAHASAN KONSISTEN KE BAWAH -->
                 <div class="content-text" style="flex: 0 0 auto;">
                     <p style="font-size: 14px; margin-bottom: 8px;">Sendi sinovial memungkinkan pergerakan mekanis spesifik tubuh:</p>
                     <ul style="display: block; margin-left: 20px;">
@@ -712,17 +704,17 @@
                     </ul>
                 </div>
                 
-                <!-- FOTO 8A, 8B, 8C DI BAWAH DENGAN UKURAN LEBIH BESAR & KETAJAMAN TINGGI -->
+                <!-- 3 GAMBAR DI BAWAH DENGAN TAMPILAN LEBAR & BISA DILIHAT LANGSUNG DENGAN JELAS -->
                 <div class="media-row" style="flex: 0 0 auto; margin-top: 15px; justify-content: center; gap: 14px;">
-                    <div class="media-box media-box-small">
+                    <div class="media-box media-box-large">
                         <img src="gambar8A.png" alt="Fleksi dan Ekstensi">
                         <div class="caption">Gambar 8A: Fleksi & Ekstensi</div>
                     </div>
-                    <div class="media-box media-box-small">
+                    <div class="media-box media-box-large">
                         <img src="gambar8B.png" alt="Abduksi dan Adduksi">
                         <div class="caption">Gambar 8B: Abduksi & Adduksi</div>
                     </div>
-                    <div class="media-box media-box-small">
+                    <div class="media-box media-box-large">
                         <img src="gambar8C.png" alt="Rotasi Medial dan Lateral">
                         <div class="caption">Gambar 8C: Rotasi Medial & Lateral</div>
                     </div>
@@ -762,7 +754,7 @@
 
                 <div class="content-media-grid">
                     <div class="media-box single">
-                        <img src="gambar9C.png" alt="Spina Bifida" style="height: 430px;">
+                        <img src="gambar9C.png" alt="Spina Bifida" style="height: 440px;">
                         <div class="caption">Gambar 9C: Spina Bifida</div>
                     </div>
                 </div>
