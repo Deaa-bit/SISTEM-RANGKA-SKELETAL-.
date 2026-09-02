@@ -278,7 +278,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            gap: 12px;
+            justify-content: space-between;
         }
 
         .content-text {
@@ -344,13 +344,13 @@
             height: 430px;
         }
 
-        /* Khusus Slide 8 (Gambar 8A, 8B, 8C): Dikecilkan dan Tetap Jernih */
+        /* Khusus Slide 8 (Gambar 8A, 8B, 8C): Diberi Ukuran Pas & Disimpan Di Bawah */
         .media-box-small {
             padding: 6px;
         }
 
         .media-box-small img {
-            height: 145px !important; /* Ukuran lebih kecil agar proporsional dengan teks */
+            height: 135px !important;
             max-width: 100%;
         }
 
@@ -689,15 +689,15 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 9: BAHASAN H (PERBAIKAN UKURAN & RESOLUSI FOTO) ==================== -->
+        <!-- ==================== SLIDE 9: BAHASAN H (FOTO DIGESER KE BAWAH) ==================== -->
         <div class="slide-body" id="slide-9">
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">H. Jenis-jenis Gerakan Sendi Sinovial</h2>
             <div class="content-flex-vertical">
-                <!-- Teks Pembahasan yang Proporsional & Rapi di Atas -->
-                <div class="content-text" style="flex: 0 0 auto;">
-                    <p style="font-size: 14px; margin-bottom: 8px;">Sendi sinovial memungkinkan pergerakan mekanis spesifik tubuh:</p>
-                    <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 18px;">
+                <!-- Teks Pembahasan Bebas Di Atas -->
+                <div class="content-text" style="flex: 0 0 auto; margin-bottom: 15px;">
+                    <p style="font-size: 14px; margin-bottom: 10px;">Sendi sinovial memungkinkan pergerakan mekanis spesifik tubuh:</p>
+                    <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px;">
                         <li><strong class="highlight">Fleksi & Ekstensi</strong>: Menekuk (mengurangi sudut sendi) vs Meluruskan (memperbesar sudut sendi).</li>
                         <li><strong class="highlight">Abduksi & Adduksi</strong>: Gerakan menjauhi poros tubuh vs gerakan mendekati poros tubuh.</li>
                         <li style="grid-column: span 2;"><strong class="highlight">Rotasi Ekstremitas</strong>: Memutar tulang pada poros panjangnya:
@@ -706,8 +706,8 @@
                     </ul>
                 </div>
                 
-                <!-- Foto 8A, 8B, 8C yang Diperkecil & Diberi Rendering Tajam -->
-                <div class="media-row" style="flex: 0 0 auto; margin-top: 10px; justify-content: center; gap: 14px;">
+                <!-- Foto 8A, 8B, 8C Disusun Rapi di Bagian Bawah -->
+                <div class="media-row" style="flex: 0 0 auto; margin-top: auto; padding-top: 15px; justify-content: center; gap: 16px;">
                     <div class="media-box media-box-small">
                         <img src="gambar8A.png" alt="Fleksi dan Ekstensi">
                         <div class="caption">Gambar 8A: Fleksi & Ekstensi</div>
