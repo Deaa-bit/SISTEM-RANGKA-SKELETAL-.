@@ -375,6 +375,22 @@
             height: 135px;
         }
 
+        /* ==================== REFERENSI LIST STYLE ==================== */
+        .reference-list {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .reference-list li {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            padding-left: 24px;
+            text-indent: -24px;
+            color: #333;
+        }
+
         /* ==================== FOOTER / NAVIGATION ==================== */
         .bottom-nav {
             height: 50px;
@@ -570,12 +586,12 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 4: BAHASAN C ==================== -->
+        <!-- ==================== SLIDE 4: BAHASAN C (DIPERBESAR) ==================== -->
         <div class="slide-body" id="slide-4">
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">C. Anatomi Makroskopis Tulang Panjang</h2>
-            <div class="content-flex">
-                <div class="content-text">
+            <div class="content-flex" style="gap: 20px;">
+                <div class="content-text" style="flex: 0.85;">
                     <p>Tulang panjang memiliki bagian anatomi spesifik:</p>
                     <ul>
                         <li><strong class="highlight">Epifisis</strong>: Ujung proksimal/distal tersusun dari <strong class="highlight">tulang spons</strong> berisi sumsum merah.</li>
@@ -585,19 +601,19 @@
                         <li><strong class="highlight">Endosteum</strong>: Lapisan dalam penutup rongga medula.</li>
                     </ul>
 
-                    <div class="source-citation">
+                    <div class="source-citation" style="margin-top: auto;">
                         <strong>Sumber:</strong> (Khadijah et al., 2020)
                     </div>
                 </div>
-                <div class="content-media-grid">
-                    <div class="media-row">
-                        <div class="media-box">
-                            <img src="gambar3A.png" alt="Struktur Tulang Panjang">
-                            <div class="caption">Gambar 3A: Anatomi Tulang Panjang</div>
+                <div class="content-media-grid" style="flex: 1.15; gap: 12px;">
+                    <div class="media-row" style="height: 100%;">
+                        <div class="media-box" style="padding: 10px; height: 100%;">
+                            <img src="gambar3A.png" alt="Struktur Tulang Panjang" style="height: 380px; width: 100%; object-fit: contain;">
+                            <div class="caption" style="font-size: 12px; margin-top: 6px;">Gambar 3A: Anatomi Tulang Panjang</div>
                         </div>
-                        <div class="media-box">
-                            <img src="gambar3B.png" alt="Potongan Tulang">
-                            <div class="caption">Gambar 3B: Kompak vs Spons</div>
+                        <div class="media-box" style="padding: 10px; height: 100%;">
+                            <img src="gambar3B.png" alt="Potongan Tulang" style="height: 380px; width: 100%; object-fit: contain;">
+                            <div class="caption" style="font-size: 12px; margin-top: 6px;">Gambar 3B: Kompak vs Spons</div>
                         </div>
                     </div>
                 </div>
@@ -855,56 +871,58 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 10: BAHASAN I ==================== -->
+        <!-- ==================== SLIDE 10: BAHASAN I (LAYOUT ULANG) ==================== -->
         <div class="slide-body" id="slide-10">
             <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
             <h2 class="sub-title">I. Kelainan & Gangguan Sistem Rangka</h2>
-            <div class="content-flex">
-                <div class="content-text">
-                    <ul>
-                        <li style="margin-bottom: 6px;">
+            <div class="content-flex-vertical" style="justify-content: flex-start; gap: 10px;">
+                <div class="content-text" style="flex: 0 0 auto;">
+                    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; margin-left: 18px;">
+                        <li>
                             <strong class="highlight">Kelainan Kurvatur Tulang Belakang</strong>: 
-                            <strong>Skoliosis</strong> (melengkung ke samping), 
-                            <strong>Lordosis</strong> (bengkok lumbal ke depan), dan 
-                            <strong>Kifosis</strong> (bongkok toraks ke belakang).
+                            <strong>Skoliosis</strong> (ke samping), 
+                            <strong>Lordosis</strong> (lumbal ke depan), 
+                            <strong>Kifosis</strong> (toraks ke belakang).
                         </li>
-                        <li style="margin-bottom: 6px;">
-                            <strong class="highlight">Deformitas pada Ekstremitas Bawah</strong>: 
-                            <strong>Kaki O / Bowlegs (genu varum)</strong> yaitu lutut saling berjauhan. 
-                            <strong>Kaki X / Knock-knee (genu valgum)</strong> di mana lutut saling bersentuhan namun pergelangan kaki terpisah.
+                        <li>
+                            <strong class="highlight">Deformitas Ekstremitas Bawah</strong>: 
+                            <strong>Kaki O / Bowlegs (genu varum)</strong> & 
+                            <strong>Kaki X / Knock-knee (genu valgum)</strong>.
                         </li>
-                        <li style="margin-bottom: 6px;">
-                            <strong class="highlight">Osteoporosis</strong>: Kelainan metabolik sistemik ditandai penurunan massa tulang dan kerusakan mikroarsitektur jaringan secara progresif.
+                        <li>
+                            <strong class="highlight">Osteoporosis</strong>: Penurunan massa tulang dan kerusakan mikroarsitektur jaringan secara progresif.
                         </li>
-                        <li style="margin-bottom: 6px;">
-                            <strong class="highlight">Tumor Tulang</strong>: Pertumbuhan sel abnormal pada sistem rangka.
+                        <li>
+                            <strong class="highlight">Tumor Tulang</strong>: Pertumbuhan sel abnormal pada jaringan sistem rangka.
                         </li>
-                        <li style="margin-bottom: 6px;">
+                        <li>
                             <strong class="highlight">Fraktur</strong>: Terputusnya kontinuitas struktur jaringan tulang.
                         </li>
-                        <li style="margin-bottom: 6px;">
-                            <strong class="highlight">Spina Bifida</strong>: Kegagalan penutupan tabung saraf. Terdapat jenis <em>spina bifida okulta</em> (terdapat celah kecil pada vertebra), <em>meningocele</em> (menonjolnya selaput pembungkus), dan <em>myelomeningocele</em> (kantung berisi jaringan saraf).
+                        <li>
+                            <strong class="highlight">Spina Bifida</strong>: Kegagalan penutupan tabung saraf (<em>okulta</em>, <em>meningocele</em>, <em>myelomeningocele</em>).
                         </li>
                     </ul>
 
-                    <div class="source-citation">
+                    <div class="source-citation" style="margin-top: 4px;">
                         <strong>Sumber:</strong> (Marcdante et al., 2023)
                     </div>
                 </div>
 
-                <div class="content-media-grid" style="gap: 10px;">
-                    <div class="media-box" style="width: 100%;">
-                        <img src="gambar9C.png" alt="Spina Bifida" style="height: 180px; object-fit: contain;">
+                <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 4px;">
+                    <!-- Gambar 9C memanjang di atas -->
+                    <div class="media-box" style="width: 100%; padding: 4px;">
+                        <img src="gambar9C.png" alt="Spina Bifida" style="height: 110px; width: 100%; object-fit: contain;">
                         <div class="caption">Gambar 9C: Spina Bifida</div>
                     </div>
                     
+                    <!-- Gambar 9A dan 9B di bawah -->
                     <div style="display: flex; gap: 10px; width: 100%;">
-                        <div class="media-box" style="flex: 1;">
-                            <img src="gambar9A.png" alt="Kelainan Spina" style="height: 140px; object-fit: contain;">
+                        <div class="media-box" style="flex: 1; padding: 4px;">
+                            <img src="gambar9A.png" alt="Kelainan Spina" style="height: 110px; width: 100%; object-fit: contain;">
                             <div class="caption">Gambar 9A: Kurvatur Spine</div>
                         </div>
-                        <div class="media-box" style="flex: 1;">
-                            <img src="gambar9B.png" alt="Deformitas Ekstremitas Bawah" style="height: 140px; object-fit: contain;">
+                        <div class="media-box" style="flex: 1; padding: 4px;">
+                            <img src="gambar9B.png" alt="Deformitas Ekstremitas Bawah" style="height: 110px; width: 100%; object-fit: contain;">
                             <div class="caption">Gambar 9B: Kaki O & Kaki X</div>
                         </div>
                     </div>
@@ -912,8 +930,26 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 11: CLOSING ==================== -->
+        <!-- ==================== SLIDE 11: REFERENSI ==================== -->
         <div class="slide-body" id="slide-11">
+            <h1 class="main-title">SISTEM RANGKA (SKELETAL)</h1>
+            <h2 class="sub-title">Daftar Pustaka / Referensi</h2>
+            
+            <div style="padding: 10px 20px;">
+                <ul class="reference-list">
+                    <li>Fikri, M., Azhari, A., & Epsilawati, L. (2020). Gambaran kualitas tulang pada wanita berdasarkan kelompok usia melalui radiografi panoramik. <em>Jurnal Radiologi Dentomaksilofasial Indonesia (JRDI)</em>, 4(2), 5–10.</li>
+                    <li>Hansen, J. T. (2014). <em>Netter’s Anatomy Coloring Book</em> (2nd ed.). Saunders Elsevier.</li>
+                    <li>Khadijah, S., Astuti, T., Widaryanti, R., & Ratnaningsih, E. (2020). <em>Buku Ajar Anatomi & Fisiologi Manusia Sitti Khadijah, SST, M.Kes</em>. Respati Press.</li>
+                    <li>Marcdante, K. J., Kliegman, R. M., & Schuh, A. M. (2023). <em>Nelson: Essentials of Pediatrics</em> (9th ed.). Elsevier. https://t.me/MedicalEbooksLibrary</li>
+                    <li>Nugrahaeni, A. (2020). <em>Pengantar anatomi fisiologi manusia</em>. Anak Hebat Indonesia.</li>
+                    <li>Rahim, M. I. (2017). Gambaran radiologi pada craniosynostosis. <em>Jurnal Radiologi Indonesia</em>.</li>
+                    <li>Tortora, G. J., & Derrickson, B. (2020). <em>Principles of Anatomy and Physiology</em> (16th ed.). Hoboken: John Wiley & Sons.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 12: CLOSING ==================== -->
+        <div class="slide-body" id="slide-12">
             <div class="cover-wrapper" style="background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);">
                 <div class="ornament-circle-1" style="border-color: rgba(0, 77, 64, 0.2);"></div>
                 <div class="ornament-circle-2"></div>
@@ -946,7 +982,7 @@
                 &#9776; Daftar Pembahasan
             </button>
             
-            <span class="slide-counter" id="slide-counter">Slide 1 / 12</span>
+            <span class="slide-counter" id="slide-counter">Slide 1 / 13</span>
             
             <button class="nav-btn" id="btn-next" onclick="changeSlide(1)">Selanjutnya &rarr;</button>
         </div>
@@ -955,7 +991,7 @@
     <!-- ==================== JAVASCRIPT CONTROL ==================== -->
     <script>
         let currentSlide = 0;
-        const totalSlides = 12;
+        const totalSlides = 13;
 
         const topicLabels = [
             "Sistem Rangka (Skeletal)",
@@ -969,6 +1005,7 @@
             "G. Klasifikasi Sendi Berdasarkan Struktur",
             "H. Jenis-jenis Gerakan Sendi Sinovial",
             "I. Kelainan Sistem Rangka",
+            "Daftar Pustaka / Referensi",
             "Penutup & Terima Kasih"
         ];
 
